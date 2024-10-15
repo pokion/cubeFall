@@ -1,0 +1,50 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://cjuudevkehja"]
+
+[ext_resource type="Texture2D" uid="uid://dpmv4x6os5qg2" path="res://assets/blue_pressed.png" id="1_pr8y3"]
+[ext_resource type="Texture2D" uid="uid://cbsyg3lhpe6qn" path="res://assets/blue_hover.png" id="2_ato7h"]
+[ext_resource type="Texture2D" uid="uid://2x3cjrcocppt" path="res://assets/blue_normal.png" id="3_56ut5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v2wx4"]
+bg_color = Color(1, 0.698039, 0.219608, 1)
+border_width_bottom = 8
+border_color = Color(0.6, 0.419608, 0.133333, 1)
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_odi2a"]
+texture = ExtResource("1_pr8y3")
+texture_margin_left = 28.0395
+texture_margin_top = 21.7306
+texture_margin_right = 29.4415
+texture_margin_bottom = 10.5148
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rntjx"]
+texture = ExtResource("2_ato7h")
+texture_margin_left = 28.7405
+texture_margin_top = 21.0296
+texture_margin_right = 29.091
+texture_margin_bottom = 17.8752
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2c6k2"]
+texture = ExtResource("3_56ut5")
+texture_margin_left = 25.787
+texture_margin_top = 18.126
+texture_margin_right = 25.707
+texture_margin_bottom = 22.5026
+
+[resource]
+default_font_size = 64
+Button/colors/font_color = Color(0.0313726, 0.027451, 0.0196078, 1)
+Button/colors/font_focus_color = Color(1, 1, 1, 0.756863)
+Button/colors/font_hover_color = Color(1, 1, 1, 0.756863)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 0.756863)
+Button/colors/font_pressed_color = Color(1, 1, 1, 0.756863)
+Button/styles/disabled = SubResource("StyleBoxFlat_v2wx4")
+Button/styles/focus = SubResource("StyleBoxTexture_odi2a")
+Button/styles/hover = SubResource("StyleBoxTexture_rntjx")
+Button/styles/normal = SubResource("StyleBoxTexture_2c6k2")
+Button/styles/pressed = SubResource("StyleBoxTexture_odi2a")
+Label/colors/font_color = Color(0.0646965, 0.0646965, 0.0646965, 1)

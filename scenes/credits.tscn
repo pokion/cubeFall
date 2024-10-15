@@ -1,0 +1,149 @@
+[gd_scene load_steps=7 format=3 uid="uid://bqn7hbkq2lxvu"]
+
+[ext_resource type="Script" path="res://scripts/credits.gd" id="1_8xfup"]
+[ext_resource type="Script" path="res://scripts/back.gd" id="1_w3xyc"]
+[ext_resource type="PackedScene" uid="uid://dq3155osyvooe" path="res://scenes/menu.tscn" id="2_18o12"]
+[ext_resource type="Texture2D" uid="uid://x0267xltpnb4" path="res://assets/chevron-left-svgrepo-com.png" id="3_f5thl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5hpl0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Theme" id="Theme_4e4hf"]
+Button/styles/disabled = SubResource("StyleBoxFlat_5hpl0")
+Button/styles/focus = SubResource("StyleBoxFlat_5hpl0")
+Button/styles/hover = SubResource("StyleBoxFlat_5hpl0")
+Button/styles/normal = SubResource("StyleBoxFlat_5hpl0")
+Button/styles/pressed = SubResource("StyleBoxFlat_5hpl0")
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8xfup")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 114.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Author" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Role" type="Label" parent="ScrollContainer/VBoxContainer/Author"]
+layout_mode = 2
+text = "Author"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Name" type="Label" parent="ScrollContainer/VBoxContainer/Author"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.372549, 0.372549, 0.372549, 1)
+text = "Cezary Bubieniec"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ImagesOfAnimals" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Role" type="Label" parent="ScrollContainer/VBoxContainer/ImagesOfAnimals"]
+layout_mode = 2
+text = "Images of animals"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Name" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/ImagesOfAnimals"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.374139, 0.374139, 0.374139, 1)
+bbcode_enabled = true
+text = "[center] [url=https://dribbble.com/reggid?ref=svgrepo.com]Aslan[/url]  in CC Attribution License via  [url=https://www.svgrepo.com/]SVG Repo[/url]
+[/center]"
+fit_content = true
+scroll_active = false
+
+[node name="ImagesOfAnimals2" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Role" type="Label" parent="ScrollContainer/VBoxContainer/ImagesOfAnimals2"]
+layout_mode = 2
+text = "Chevron Left image"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Name" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/ImagesOfAnimals2"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.374139, 0.374139, 0.374139, 1)
+bbcode_enabled = true
+text = "[center] [url=https://github.com/vaadin/vaadin-icons?ref=svgrepo.com]Vaadin[/url] in Apache License via [url=https://www.svgrepo.com/]SVG Repo[/url]
+[/center]"
+fit_content = true
+scroll_active = false
+
+[node name="ImagesOfAnimals3" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Role" type="Label" parent="ScrollContainer/VBoxContainer/ImagesOfAnimals3"]
+layout_mode = 2
+text = "Heart Love image"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Name" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/ImagesOfAnimals3"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.374139, 0.374139, 0.374139, 1)
+bbcode_enabled = true
+text = "[center] [url=https://dribbble.com/ruslan_design?ref=svgrepo.com]Ruslan Design[/url] in CC Attribution License via [url=https://www.svgrepo.com/]SVG Repo[/url]
+[/center]"
+fit_content = true
+scroll_active = false
+
+[node name="back" type="Button" parent="."]
+offset_right = 216.0
+offset_bottom = 113.0
+theme = SubResource("Theme_4e4hf")
+script = ExtResource("1_w3xyc")
+scene = ExtResource("2_18o12")
+
+[node name="Chevron-left-svgrepo-com" type="Sprite2D" parent="back"]
+position = Vector2(48.5, 51.5)
+scale = Vector2(0.394531, 0.394531)
+texture = ExtResource("3_f5thl")
+
+[node name="Label" type="Label" parent="back"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -126.0
+offset_top = -30.0
+offset_bottom = 30.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Back"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="meta_clicked" from="ScrollContainer/VBoxContainer/ImagesOfAnimals/Name" to="." method="_on_name_meta_clicked"]
+[connection signal="meta_clicked" from="ScrollContainer/VBoxContainer/ImagesOfAnimals2/Name" to="." method="_on_name_meta_clicked"]
+[connection signal="meta_clicked" from="ScrollContainer/VBoxContainer/ImagesOfAnimals3/Name" to="." method="_on_name_meta_clicked"]
+[connection signal="pressed" from="back" to="back" method="_on_pressed"]

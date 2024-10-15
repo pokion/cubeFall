@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsfuqpt2mcmyq"]
+
+[ext_resource type="Script" path="res://gameScene.gd" id="1_cgqui"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3t51u"]
+
+[node name="GameNode" type="Node2D"]
+script = ExtResource("1_cgqui")
+
+[node name="Spawner" type="Node2D" parent="."]
+position = Vector2(74, -64)
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="Spawner"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawner/Area2D"]
+scale = Vector2(1.067, 7)
+shape = SubResource("RectangleShape2D_3t51u")
+
+[node name="Spawner2" type="Node2D" parent="."]
+position = Vector2(217, -64)
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="Spawner2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawner2/Area2D"]
+scale = Vector2(1, 7)
+shape = SubResource("RectangleShape2D_3t51u")
+
+[node name="Spawner3" type="Node2D" parent="."]
+position = Vector2(359, -64)
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="Spawner3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawner3/Area2D"]
+scale = Vector2(1, 7)
+shape = SubResource("RectangleShape2D_3t51u")
+
+[node name="Spawner4" type="Node2D" parent="."]
+position = Vector2(502, -64)
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="Spawner4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawner4/Area2D"]
+scale = Vector2(1, 7)
+shape = SubResource("RectangleShape2D_3t51u")
+
+[node name="Spawner5" type="Node2D" parent="."]
+position = Vector2(645, -64)
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="Spawner5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawner5/Area2D"]
+scale = Vector2(1, 7)
+shape = SubResource("RectangleShape2D_3t51u")
+
+[connection signal="area_exited" from="Spawner/Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="area_exited" from="Spawner2/Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="area_exited" from="Spawner3/Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="area_exited" from="Spawner4/Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="area_exited" from="Spawner5/Area2D" to="." method="_on_area_2d_area_exited"]
